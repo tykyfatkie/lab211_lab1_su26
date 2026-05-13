@@ -20,7 +20,7 @@ public class Statistics extends HashMap<String, StatisticalInfo> {
         statisticalize(list);
     }
 
-    public void statisticalize(List<Student> list) {
+    public List<StatisticalInfo> statisticalize(List<Student> list) {
         for (Student i : list) {
             if (this.containsKey(i.getMountainCode())) {
                 StatisticalInfo x = this.get(i.getMountainCode());
@@ -31,6 +31,7 @@ public class Statistics extends HashMap<String, StatisticalInfo> {
                 this.put(i.getMountainCode(), z);
             }
         }
+        return new java.util.ArrayList<>(this.values());
     }
 
     public void show() {
